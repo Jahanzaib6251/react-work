@@ -26,15 +26,9 @@ const Form = () => {
     useEffect(() => {
         const handleKeyDown = (e) => {
           if (e.key === '/') {
+            e.preventDefault();
             f_nameRef.current.focus();
-            f_nameRef.current.value = ''; 
-          }
-          else if (e.key === '£'){
-            l_nameRef.current.focus()
-          }
-          else if (e.key === '$'){
-            contactRef.current.focus()
-          }
+           }
         }
         window.addEventListener('keydown', handleKeyDown)
         return () => {
@@ -43,7 +37,7 @@ const Form = () => {
       }, [])
 
   return (
-    <div>
+    <div className='container'>
         <fieldset>
         Form
         <fieldset>
